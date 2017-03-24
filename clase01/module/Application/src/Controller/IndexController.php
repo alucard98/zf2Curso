@@ -16,4 +16,9 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+    
+    public function holaAction()
+    {
+        return new ViewModel(array("texto"=>"Hola mundo desde Zend Framework, soy Harold Varas"));
+    }
 }

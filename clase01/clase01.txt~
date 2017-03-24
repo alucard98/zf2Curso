@@ -33,7 +33,3 @@ con layouts se maneja la interfaz grafica de manera muy eficaz
 entre otros. Dao Factory, 
 - Conexion facil a cualquier motor de base de datos, ya sea relacional o NoSQL 
 tiene un conector muy flexible. y se puede realizar el cambio en cualquier momento
-
-
-
-
