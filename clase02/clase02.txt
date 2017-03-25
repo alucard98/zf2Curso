@@ -147,3 +147,7 @@ por cadaa vista deberiamos crear un directorio con el nombre del controlador
 
 
 
+
+
+
+

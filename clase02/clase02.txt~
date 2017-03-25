@@ -98,7 +98,11 @@ module: Aplication: contiene todo el core de nuestra aplicacion, module.php-> ti
 
 src: aplication: aqui se colocan los controladores , y los modelos
 view: los archivos de error, los layouts y tbm dentro de aplication generamos la vista.
-por cadaa vista deberiamos crear un directorio con el nombre del controlador
+por cadaa vista deberiamos crear un directorio, por cada controlador
+
+
+
+
 
 
 
