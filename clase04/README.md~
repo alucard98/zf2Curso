@@ -1,0 +1,10 @@
+#Clase 3: 
+- trabajaremos con el module.config.php
+Cada vez que querramos un controlador se indica aqui, las url que queremos generar, en controlador por defecto, se indica el tipo de idioma.
+en este archivo vamos a colocar todas las configuraciones 
+Crearemos un controlador y luego crearemos metdos para llamar una vista desde un controlador, varias vistas, cual es la estructura de un controlador, config de base de datos.
+
+Trabajamos con 
+Module : para configuraciones
+SRC/Application : aqui van los controladores, 
+Public : en donde se guardan tus Document Objet model

@@ -1,0 +1,12 @@
+<h1>Hola desde la vista Recibe Parametros</h1>
+
+<h2>Saludo : <?php echo $this->saludo ?></h2>
+<h2>Segundo : <?php echo $this->segundo ?></h2>
+
+<label>Nombres: </label>
+<select>
+    <?php foreach ($this->nombres as $clave => $valor) { ?>
+        <option><?php echo $valor; ?>  </option>
+    <?php } ?>
+</select>
+<br>
