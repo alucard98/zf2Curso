@@ -1,0 +1,15 @@
+.header {
+    background-color: red ;
+    color : #ffffff;
+    margin: auto;
+    text-align: center;
+    font-size: 35px;
+}
+
+.footer {
+    background-color: black ;
+    color : #ffffff;
+    margin: auto;
+    text-align: center;
+    font-size: 35px;
+}
