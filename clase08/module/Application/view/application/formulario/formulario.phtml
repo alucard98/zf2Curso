@@ -1,0 +1,41 @@
+<h1><?php echo $this->titulo; ?></h1>
+<?php
+$form = $this->form;
+$form->prepare();
+
+/*
+  $form->setAttribute('action',$this->url('application/formulario/recibe'));
+  $form->setAttribute('method','post');
+ */
+$form->setAttributes(array(
+    'action' => $this->url . '/application/formulario/recibe',
+    'method' => 'post'
+));
+$formLabel = $this->plugin('formLabel');
+echo $this->form()->openTag($form);
+?>
+
+<div class="form_element">
+    <?php
+    $name = $form->get('nombre');
+    echo $formLabel->openTag().$name->getOption('label');
+    echo $this->formInput($name);
+    //echo $this->formElementErrors($name);
+    echo $formLabel->closeTag();
+    ?>
+</div>
+
+<div class="form_element">
+    <?php
+    $name = $form->get('email');
+    echo $formLabel->openTag().$name->getOption('label');
+    echo $this->formInput($name);
+    //echo $this->formElementErrors($name);
+    echo $formLabel->closeTag();
+    ?>
+</div>
+<?php
+//echo $this->formElement($form->get('security')); para el captcha
+echo $this->formElement($form->get('send'));
+echo $this->form()->closeTag($form);
+?>

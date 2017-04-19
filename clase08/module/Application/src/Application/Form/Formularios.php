@@ -17,8 +17,52 @@ use Zend\Captcha;
 use Zend\Form\Factory;
 
 class Formularios extends Form {
+
     //se crea un constructor para inicializar los componentes del formulario    
-public function __construct($name = null){
-    parent::__construct($name);
-}
+    public function __construct($name = null) {
+        parent::__construct($name);
+        $this->add(array(
+            'name' => 'nombre',
+            'options' => array(
+                'label' => 'Nombre Completo',
+            ),
+            'attributes' => array(
+                'type' => 'text',
+                'class'=> 'form-control'
+            ),
+        ));
+        
+        $factory = new Factory();
+        $email = $factory->createElement(array(
+            'type'=>'Zend\Form\Element\Email',
+            'name'=>'email',
+            'options'=>array(
+                'label'=>'Correo',
+            ),
+            'attributes' => array(
+                'type' => 'text',
+                'class'=> 'form-control'
+            ),
+        ));
+        $this->add($email);
+        
+        //boton enviar
+        
+        //$this->add(new Element\Csrf('security')); //esto es para el captcha
+        $this->add(array(
+            'name' => 'send',
+            'attributes'=>array(
+                'type'=>'submit',
+                'value'=>'Enviar',
+                'class'=>'btn-sm btn-danger',
+                'tittle' => 'Enviar'
+            )
+        ));
+        
+        
+//        $name = new Element('name');
+//        $name->setLabel('Your name');
+//        $name->setAttributes(array('type'=>'text'));
+    }
+
 }
