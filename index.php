@@ -14,7 +14,7 @@
             <li><a href="clase07/public/">Clase 07</a></li><br> 
             <li><a href="clase08/public/application/formulario/formulario">Clase 08</a></li><br> 
             <li><a href="clase09/public/application/formulario/formulario">Clase 09</a></li><br> 
-            <li><a href="clase10/public/">Clase 10</a></li><br> 
+            <li><a href="clase10/public/application/formulario/formulario">Clase 10</a></li><br> 
             <li><a href="clase11/public/">Clase 11</a></li><br> 
             <li><a href="clase12/public/">Clase 12</a></li><br> 
         </ul>

@@ -33,10 +33,10 @@ class Formularios extends Form {
             ),
         ));
         
-        $correo = new Element\Email('correo');
-        $correo->setLabel('Email Address');
-        $correo->setRequired(true);
-        $this->add($correo);
+//        $correo = new Element\Email('correo');
+//        $correo->setLabel('Email Address');
+//        $correo->setRequired(true);
+//        $this->add($correo);
         
         $factory = new Factory();
         $email = $factory->createElement(array(
