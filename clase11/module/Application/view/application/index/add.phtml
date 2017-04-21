@@ -1,0 +1,42 @@
+<h1><?php echo $this->titulo;?></h1>
+
+<div class="col-md-12">
+    <div class="col-md-9"></div>
+    <div class="col-md-3">
+        <a href="<?php echo $this->basePath()?>/application/index/add" class="btn-sm btn-success" ><i class="fa fa-plus"></i> Agregar </a>
+    </div>
+</div>
+<table id="example" style="text-align:center;" class="table table-striped responsive-utilities jambo_table bulk_action">
+    <thead>
+        <tr class="headings">
+            <th  style="text-align:center;">
+                <input type="checkbox" id="check-all" class="flat">
+            </th>
+            <th style="text-align:center;" class="column-title">Id</th>
+            <th style="text-align:center;" class="column-title">Nombre</th>
+            <th style="text-align:center;" class="column-title">E-mail</th> 
+            <th style="text-align:center;" class="column-title">Detalle</th> 
+            <th style="text-align:center;" class="column-title">Accion</th> 
+            
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($this->datos as $dato) { ?>
+            <tr class="even pointer">
+                <td class="a-center "><input type="checkbox" class="flat" name="table_records" ></td>
+                <td class=""><?php echo $dato['id']; ?></td>
+                <td class=""><?php echo $dato['nombre']; ?></td>
+                <td class=""><?php echo $dato['correo']; ?></td>
+                <td class=" last">
+                    <a href="<?php echo $this->basePath()?>/application/index/ver/<?php echo $dato['id'];?>" class="btn-sm btn-primary" ><i class="fa fa-search"></i> Ver </a>
+                </td>
+                <td class=" last">
+                    <a href="<?php echo $this->basePath()?>/application/index/ver/<?php echo $dato['id'];?>" class="btn-sm btn-warning" ><i class="fa fa-pencil"></i> Editar </a> &nbsp;&nbsp;
+                    <a href="<?php echo $this->basePath()?>/application/index/ver/<?php echo $dato['id'];?>" class="btn-sm btn-danger" ><i class="fa fa-close"></i> Quitar </a>
+                    <!--<a href="<?php// echo $this->basePath()?>/application/index/ver/<?php //echo $dato['id'];?>" class="btn-sm btn-primary" ><i class="fa fa-search"></i> Ver </a>-->
+                </td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+
