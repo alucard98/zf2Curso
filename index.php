@@ -16,7 +16,7 @@
             <li><a href="clase09/public/application/formulario/formulario">Clase 09</a></li><br> 
             <li><a href="clase10/public/application/index/result">Clase 10</a></li><br> 
             <li><a href="clase11/public/application/index/sql">Clase 11</a></li><br> 
-            <li><a href="clase12/public/">Clase 12</a></li><br> 
+            <li><a href="clase12/public/application/formulario">Clase 12</a></li><br> 
         </ul>
     </body>
 </html>

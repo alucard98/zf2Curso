@@ -11,18 +11,47 @@
         ?>
 
         <!-- Le styles -->
-        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-                        ->prependStylesheet($this->basePath() . '/css/style.css')
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+        <?php
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                ->prependStylesheet($this->basePath() . '/css/style.css')
+                ->prependStylesheet($this->basePath() . '/css/icheck/flat/_all.css')
+//                ->prependStylesheet($this->basePath() . '/css/custom.css')
+                ->prependStylesheet($this->basePath() . '/css/datatables/tools/css/dataTables.tableTools.css')
+                ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+                ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                ->prependStylesheet($this->basePath() . '/css/animate.min.css')
+                ->prependStylesheet($this->basePath() . '/fonts/css/font-awesome.min.css')
+        ?>
 
         <!-- Scripts -->
-        <?php echo $this->headScript()
-            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-            ->prependFile($this->basePath() . '/js/jquery.min.js')
-            ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-            ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
-        ; ?>
+        <?php
+        echo $this->headScript()
+                ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+                ->prependFile($this->basePath() . '/js/jquery.min.js')
+                ->prependFile($this->basePath() . '/js/icheck/icheck.min.js')
+                ->prependFile($this->basePath() . '/js/custom.js')
+                ->prependFile($this->basePath() . '/js/datatables/js/jquery.dataTables.js')
+                ->prependFile($this->basePath() . '/js/datatables/tools/js/dataTables.tableTools.js') 
+                ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                ->prependFile($this->basePath() . '/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+        ;
+        ?> 
+ 
+        
+        <!-- icheck -->
+        <!--<script src="../../public/js/icheck/icheck.min.js"></script>-->
+        <!--<script src="../../public/js/custom.js"></script>-->
+        <!-- Datatables -->
+<!--        <script src="../../public/js/datatables/js/jquery.dataTables.js"></script>
+        <script src="../../public/js/datatables/tools/js/dataTables.tableTools.js"></script>-->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('input.flat').iCheck({
+                    checkboxClass: 'icheckbox_flat-blue',
+                    radioClass: 'iradio_flat-blue'
+                });
+            });
+        </script>
 
     </head>
     <body>
@@ -51,5 +80,47 @@
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>
+        
+        <!--        <script >
+            var asInitVals = new Array();
+            $(document).ready(function () {
+                var oTable = $('#example').dataTable({
+                    "oLanguage": {
+                        "sSearch": "Buscar:"
+                    },
+                    "aoColumnDefs": [
+                        {
+                            'bSortable': false,
+                            'aTargets': [0]
+                        } //disables sorting for column one
+                    ],
+                    'iDisplayLength': <?php echo "10"; ?>,
+                    "sPaginationType": "full_numbers",
+                    "dom": 'T<"clear">lfrtip',
+                    //"tableTools": {
+                    // "sSwfPath": "<?php // echo base_url('../.../js/datatables/tools/swf/copy_csv_xls_pdf.swf');        ?>"
+                    //}
+                });
+                $("tfoot input").keyup(function () {
+                    /* Filter on the column based on the index of this element's parent <th> */
+                    oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+                });
+                $("tfoot input").each(function (i) {
+                    asInitVals[i] = this.value;
+                });
+                $("tfoot input").focus(function () {
+                    if (this.className == "search_init") {
+                        this.className = "";
+                        this.value = "";
+                    }
+                });
+                $("tfoot input").blur(function (i) {
+                    if (this.value == "") {
+                        this.className = "search_init";
+                        this.value = asInitVals[$("tfoot input").index(this)];
+                    }
+                });
+            });
+        </script>-->
     </body>
 </html>

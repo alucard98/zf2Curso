@@ -1,0 +1,49 @@
+<h1><?php echo $this->titulo; ?></h1>
+
+<?php
+$form = $this->form;
+$form->prepare();
+$form->setAttributes(array(
+    'action' => $this->url . '/application/formulario/registro',
+    'method' => 'Post',
+    'class' => 'form-horizontal',
+));
+$formLabel = $this->plugin('formLabel');
+echo $this->form()->openTag($form);
+
+if($this->respuesta=='1'){ ?>
+    <div class="col-md-3 alert alert-warning">
+        <?php echo "El registro se ingreso exitosamente"?>
+    </div><br><br><br>
+<?php 
+
+}
+
+?>
+<hr/>
+<div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre: </label> 
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <?php
+        $name = $form->get('nombre');
+        echo $this->formInput($name);
+        ?>
+    </div>
+</div> 
+
+<div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">E-mail: </label> 
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <?php
+        $mail = $form->get('email');
+        echo $this->formInput($mail);
+        ?>
+    </div>
+</div>
+
+<div style="text-align: center;" class="a-center">
+    <?php
+    echo $this->formElement($form->get('send'));
+    echo $this->form()->closeTag($form);
+    ?>
+</div>
